@@ -1,0 +1,21 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<div class="row" style ="margin-top: 2%; margin-bottom: 2%;">
+	<div class = "large-12 large-centered columns">
+		{% if successful == False %}
+			<p align = "center" style = "color: red;"> There was an issue with your submission. Please try again. </p>
+		{% endif %}
+		<h3 align = "center"> Upload a .txt file to see its 25 most common words </h3>
+	</div>
+	<div class = "large-10 large-centered columns">
+		<hr/>
+	</div>
+	<div class = "large-12 large-centered columns">
+		<form enctype="multipart/form-data" action = "/" method = "post"> {% csrf_token %}
+			<input id="id_raw_file" name="raw_file" type="file" class="button secondary">
+			<input style = "float: right;" class = "button" type = "submit" value = "Upload"/>
+		</form> 
+	</div>
+</div>
+{% endblock%}

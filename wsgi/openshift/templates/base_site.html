@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<html class="no-js" lang="en">
+<head>
+	{% if curTitle %}
+		<title> {{curTitle}} </title>
+	{% else %}
+		<title> Top 25 </title>
+	{% endif %}
+	<link rel="icon" type='image/png' href="{% static 'readers/images/favicon.ico' %}"/>
+	<meta charset="utf-8">
+    <!-- If you delete this meta tag World War Z will become a reality -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type='text/css' href= "{% static 'readers/foundation-5.5.0.custom/css/normalize.css' %}" /> 
+	<link rel="stylesheet" type='text/css' href= "{% static 'readers/foundation-5.5.0.custom/css/foundation.css' %}" />
+	<link rel="stylesheet" type='text/css' href= "{% static 'readers/foundation-5.5.0.custom/css/foundation.min.css' %}" />
+	<script src="/static/readers/foundation-5.5.0.custom/js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+<div class="row">
+	<div class="large-3 columns">
+		<h1><a href = "/"><img src="/static/readers/images/Top25_Logo.jpg"></a></h1>
+    </div>
+    <div style = "margin-top: 1%;" class="large-9 small-12 columns">
+    	<ul class="right button-group">
+    	  <li><a href="/" class="button"> Main </a></li>
+          <li><a href="/readers/archive" class="button">Archive</a></li>
+        </ul>
+    </div>
+</div>
+{% block content %}
+
+{% endblock %}
+<footer class="row">
+	<div class="large-12 columns"><hr/>
+	<div class="row">
+		<div class="large-6 columns">
+			<p> Have fun! You can take the <a href = "https://github.com/cnwalker/Processors/tree/master/WordAnalyzer"> source code </a> if you like</p>
+        </div>
+        <div class="large-6 columns">
+        	<ul class="inline-list right">
+        		<li><a href="/"> Main</a></li>
+        		<li><a href="/readers/archive/">Archived</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</footer>
+<script src="/static/readers/foundation-5.5.0.custom/js/vendor/jquery.js"></script>
+<script type = "text/javascript" src="/static/readers/foundation-5.5.0.custom/js/vendor/fastclick.js"> </script>
+<script type = "text/javascript" src="/static/readers/foundation-5.5.0.custom/js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<div class = "row">
+	<div class = "large-12 columns">
+		<h3 align = "center"> Most common words in <a href = "/readers/{{curReader.id}}/">{{curReader.get_short_name}}</a></h3>
+		<h3 align = "center"> <a href ="/readers/{{curReader.id}}/{{next_click}}" class = "button">{{button_text}}</a> </h3>
+		<hr/>
+	</div>
+	{% for wordset in common_list %}
+	<div class = "large-4 columns">
+		<a target = "blank" href = "http://dictionary.reference.com/browse/{{wordset.0}}?s=t">
+			<h3 style = "margin-left: 32%;" class = "button {{b_color}}"> <b>{{wordset.0}}:</b> {{wordset.1}} </h3></a>
+	</div>
+	{% endfor %}
+</div>
+{% endblock%}

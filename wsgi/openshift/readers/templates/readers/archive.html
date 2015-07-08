@@ -1,0 +1,16 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<div class = "row">
+	<div class = "large-12 columns">
+		{% if reader_list %}
+			<h3 align = "center"> Previously Analyzed </h3>
+		{% for reader in reader_list %}
+			<h4 align = "center"> <a href = "/readers/{{ reader.id }}"> {{reader.get_short_name}} </a> <h4>
+		{% endfor %}
+		{% else %}
+			<h3 align = "center"> No files avaliable. Upload on the <a href= "/"> main page.</a></h3>
+		{% endif %}
+	</div>
+</div>
+{% endblock%}
